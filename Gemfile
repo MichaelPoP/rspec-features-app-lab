@@ -39,6 +39,7 @@ group :development, :test do
 
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
+  gem 'guard-rspec', require: false
 
 
   # Access an IRB console on exception pages or by using <%= console %> in views
