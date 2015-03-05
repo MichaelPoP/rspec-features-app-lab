@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'weather/index'
+ root 'weather#index'
 
-  get 'weather/umbrella'
+  get 'weather/rain'
 
-  get 'weather/noumbrella'
+  get 'weather/saved'
 
-  root 'weather#index'
+  
 end

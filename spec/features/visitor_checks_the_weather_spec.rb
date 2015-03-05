@@ -15,6 +15,17 @@ feature 'Visitor checks the weather' do
     expect(page).to have_content("NOBRELLA NEEDED")
 
     #TERDON
-  end
+
   
+  end
+  scenario 'raining' do
+    visit root_path
+
+    fill_in "Enter a Zipcode", with: "66666"
+    click_button "ISIT GONNA RAYNE?"
+
+    expect(page).to have_content("OH NO, ITS RAINING!")
+    expect(page).to have_content("GRAB YOUR BRELLA!")
+
+  end 
 end

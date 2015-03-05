@@ -1,4 +1,10 @@
-<h1>Weather#index</h1>
-<p>Find me in app/views/weather/index.html.erb</p>
+<h1>ISIT GONNA RAYNE?</h1>
+<%= form_tag 'weather/saved', method: :get do  %>
+<%= label_tag :zipcode, "Enter a Zipcode"  %>
+<%= text_field_tag :zipcode, nil,  value: "#{cookies[:zipcode]}"  %>
+<%= submit_tag "ISIT GONNA RAYNE?"  %>
+<% end  %>
 
-<% input_field, "Enter a Zipcode"  %>
+
+
+
