@@ -1,5 +1,8 @@
 class WeatherController < ApplicationController
   def index
+    if zipcode = cookies[:zipcode]
+      redirect_to weather_saved_path(zipcode: zipcode)
+    end
    
   end
 
@@ -13,9 +16,9 @@ class WeatherController < ApplicationController
       # binding.pry
     @zipcode = params[:zipcode]      
     cookies[:zipcode] = @zipcode.to_s
-    if @zipcode
-     params[:zipcode] = cookies[:zipcode]
-    end    
+    # if @zipcode
+    #  params[:zipcode] = cookies[:zipcode]
+    # end    
 
         
     

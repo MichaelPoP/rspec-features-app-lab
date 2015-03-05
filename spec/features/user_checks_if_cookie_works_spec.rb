@@ -1,9 +1,19 @@
 require 'rails_helper'
-feature 'User enters a zipcode' do 
-  scenario "user zipcode is remembered in a cookie" do
-    visit root_path
-    expect(page).to have_content(:zipcode)
-    #browser restart = session cookie is lost
+
+feature 'Visitor has a zipcode in their cookies' do
+  before do
+    # setup
+    page.driver.browser.set_cookie("zipcode=66666") 
     
+    # exercise 
+    visit root_path
+  end
+
+  scenario 'raining' do
+
+
+    # verify
+    expect(page).to have_content("OH NO, ITS RAINING!")
+    expect(page).to have_content("GRAB YOUR BRELLA!")
   end
 end
